@@ -1,0 +1,150 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "background": "transparent",
+            "foreground": "p:white",
+            "style": "plain",
+            "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>\u250c\u2500\u2500",
+            "type": "text"
+          },
+          {
+            "type": "shell",
+            "style": "plain",
+            "foreground": "#E06C75",
+            "properties": {
+              "mapped_shell_names": {
+                "pwsh": "Shell",
+                "powershell": "Shell",
+                "cmd": "Cmd",
+                "bash": "Bash"
+              }
+            },
+            "template": " \ue795 {{ .Name }}"
+          },
+          {
+            "background": "#003543",
+            "foreground": "#00c983",
+            "leading_diamond": "\ue0b6",
+            "style": "diamond",
+            "template": "{{ .Icon }} {{ .HostName }} ",
+            "type": "os"
+          },
+          {
+            "foreground": "#45F1C2",
+            "style": "plain",
+            "template": "\ueb99 {{ .UserName }} on",
+            "type": "session"
+          },
+          {
+            "background": "transparent",
+            "foreground": "#b3ffde",
+            "properties": {
+              "time_format": "Monday, 15:04:05 02/01/2006"
+            },
+            "style": "plain",
+            "template": " \uf073 {{.CurrentDate | date .Format}}",
+            "type": "time"
+          },
+          {
+            "foreground": "#81ff91",
+            "style": "diamond",
+            "template": "<#cc7eda> \u007C </><#7eb8da>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB",
+            "type": "sysinfo"
+          }
+        ],
+        "type": "prompt"
+      },
+      {
+        "alignment": "right",
+        "segments": [
+          
+          {
+            "properties": {
+              "always_enabled": true
+            },
+            "style": "plain",
+            "template": " {{ if gt .Code 0 }}<#ff0000>\uf00d</>{{ else }}<#23d18b>\uf42e</>{{ end }} ",
+            "type": "status"
+          },
+          {
+            "foreground": "#bab02a",
+            "properties": {
+              "always_enabled": true
+            },
+            "style": "plain",
+            "template": "took \uf252 {{ .FormattedMs }} ",
+            "type": "executiontime"
+          }
+        ],
+        "type": "prompt"
+      },
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "type": "text",
+            "style": "plain",
+            "foreground": "#E06C75",
+            "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>\u250b"
+          },
+          {
+            "foreground": "#B6D6F2",
+            "leading_diamond": "<#00C7FC> \uf07b </><#B6D6F2> in </>",
+            "properties": {
+              "folder_icon": " \uf07c ",
+              "folder_separator_icon": " \uf061 ",
+              "home_icon": "\ueb06 ",
+              "style": "agnoster_short",
+              "max_depth": 3
+            },
+            "style": "diamond",
+            "template": " {{ .Path }} ",
+            "type": "path"
+          },
+          {
+            "type": "git",
+            "style": "powerline",
+            "foreground": "#f14e32",
+            "properties": {
+              "branch_icon": "\ue725 "
+            },
+            "template": "({{ .HEAD }})"
+          }
+        ],
+        "type": "prompt"
+      },
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "foreground": "#E06C75",
+            "style": "plain",
+            "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>\u2514\u0021",
+            "type": "root"
+          },
+          {
+            "foreground": "#E06C75",
+            "style": "plain",
+            "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>\u2514\u2500",
+            "type": "text"
+          },
+          {
+            "foreground": "#ffffff",
+            "style": "plain",
+            "template": "<#C591E8>\u276f</><#69FF94>\u276f</>",
+            "type": "text"
+          }
+        ],
+        "type": "prompt"
+      }
+    ],
+    "final_space": true,
+    "version": 2
+  }
