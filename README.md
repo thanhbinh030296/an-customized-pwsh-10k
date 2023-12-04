@@ -11,7 +11,7 @@ Set-ExecutionPolicy -Scope "CurrentUser" -ExecutionPolicy "Unrestricted"
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 ```
-- open `$profile` (VScode: `code $profile``, Notepad: `notepad $profile`) 
+- open `$profile` (VScode: `code $profile`, Notepad: `notepad $profile`) 
 - add lines (I referred [Kudostoy0u/pwsh10k](https://github.com/Kudostoy0u/pwsh10k/blob/master/README.md) )
 ```
 Import-Module posh-git
